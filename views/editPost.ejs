@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center">
+                <span class="text-xl font-bold text-red-700">Quora</span>
+            </div>
+            <div class="flex items-center">
+                <% if (user) { %>
+                    <span class="mr-4 text-gray-700">Welcome, <%= user.username %></span>
+                    <a href="/posts/new" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Add Question</a>
+                    <a href="/logout" class="ml-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Logout</a>
+                <% } else { %>
+                    <a href="/signup" class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-600 transition">Sign Up</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Edit Post</h2>
+            <form action="/posts/<%= post.id %>/edit" method="POST">
+                <div class="mb-4">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" name="title" id="title" value="<%= post.title %>" class="mt-1 block w-full p-2 border rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
+                    <textarea name="content" id ="content" rows="4" class="mt-1 block w-full p-2 border rounded" required><%= post.content %></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Update Post</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

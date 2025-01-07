@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-maroon {
+    color: maroon;
+}
+
+.bg-blanchedalmond {
+    background-color: blanchedalmond;
+}
+
+.bg-maroon {
+    background-color: #800000; /* Example maroon color */
+}

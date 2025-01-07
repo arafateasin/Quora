@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# JSON files for users (if sensitive)
+users.json
+
+# Logs
+logs
+*.log
+
+# Build directories
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/

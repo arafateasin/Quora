@@ -5,6 +5,13 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid'); // Import uuid for unique ID generation
 const app = express();
 const port = process.env.PORT || 8080;
+const sessionSecret = process.env.SESSION_SECRET || 8080; // Default fallback if not set
+
+app.use(session({
+    secret: sessionSecret, // Use environment variable for session secret
+    resave: false,
+    saveUninitialized: true,
+}));
 
 
 

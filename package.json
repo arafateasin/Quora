@@ -1,4 +1,7 @@
 {
+  "engines": {
+      "node": " v22.13.0"
+   },
   "name": "rest_class",
   "version": "1.0.0",
   "main": "index.js",
